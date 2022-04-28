@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class BMIResultTable extends StatelessWidget {
 int w,h,a;
 String gender;
-
-  BMIResultTable(this.w, this.h, this.a, this.gender);
+double result;
+  BMIResultTable(this.w, this.h, this.a, this.gender,this.result);
 
   @override
 
@@ -30,6 +30,10 @@ String gender;
                 padding: const EdgeInsets.all(2.0),
                 child: TextInfo('Gender', 10,FontStyle.normal,Colors.blue),
               ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: TextInfo('Result', 10,FontStyle.normal,Colors.blue),
+              ),
             ]),
             TableRow(children :[
               Padding(
@@ -47,6 +51,10 @@ String gender;
               Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: TextInfo(gender, 10,FontStyle.normal,Colors.blue),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: TextInfo('$result', 10,FontStyle.normal,Colors.blue),
               ),
             ]),
           ]

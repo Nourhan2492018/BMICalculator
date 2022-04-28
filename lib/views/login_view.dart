@@ -4,7 +4,8 @@ import 'package:bmi_calculator_app/components/button.dart';
 import 'package:bmi_calculator_app/components/text_from_felid.dart';
 import 'package:bmi_calculator_app/components/text_info.dart';
 import 'package:bmi_calculator_app/models/user.dart';
-import 'package:bmi_calculator_app/views/bmi_calculator.dart';
+import 'package:bmi_calculator_app/views/bmi_calculator_view.dart';
+import 'package:bmi_calculator_app/views/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +55,7 @@ class LoginView extends StatelessWidget {
                           {
                             Navigator.push(context,
                               MaterialPageRoute(
-                                builder:(context)=>BMICalculatorView(),
+                                builder:(context)=>BMICalculatorView(u),
                               ),
                             );
                           }
@@ -80,7 +81,7 @@ class LoginView extends StatelessWidget {
                       child:TextInfo("if you haven't Account ?", 20,FontStyle.normal,Colors.blue),
                     ),
                     SizedBox(height: 20,),
-                    Button(this.pass, this.email, BMICalculatorView(),Icon(Icons.login,color: Colors.white),'Register Now'),
+                    Button(this.pass, this.email, SplashView(),Icon(Icons.login,color: Colors.white),'Register Now'),
                   ]),
             ),
 

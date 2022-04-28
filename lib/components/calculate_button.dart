@@ -26,7 +26,6 @@ class _CalculateButtonState extends State<CalculateButton> {
             borderRadius: BorderRadiusDirectional.circular(200.0),
           ),
             child: MaterialButton(
-
               onPressed: (){
                 BMICalculation b= BMICalculation(widget.user);
                 Navigator.push(context,

@@ -8,7 +8,7 @@ import 'package:bmi_calculator_app/components/ibm_app_bar.dart';
 import 'package:bmi_calculator_app/components/ibm_icon.dart';
 import 'package:bmi_calculator_app/components/oscilloscope_graph.dart';
 import 'package:bmi_calculator_app/components/text_info.dart';
-import 'package:bmi_calculator_app/views/bmi_calculator.dart';
+import 'package:bmi_calculator_app/views/bmi_calculator_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class ResultView extends StatefulWidget {
@@ -50,7 +50,7 @@ class _ResultViewState extends State<ResultView> {
   Widget build(BuildContext context) {
     //print(widget.b.user.age);
     return Scaffold(
-      appBar: BMIAppBar(BMIIcon(Icons.arrow_back_ios,Colors.blue,25),BMIIcon(Icons.notifications,Colors.blue,25),BMICalculatorView()),
+      appBar: BMIAppBar(BMIIcon(Icons.arrow_back_ios,Colors.blue,25),BMIIcon(Icons.notifications,Colors.blue,25),BMICalculatorView(widget.b.user)),
       body: Container( color: Colors.white,
         child: Column(
           children: [
@@ -73,14 +73,14 @@ class _ResultViewState extends State<ResultView> {
                       padding: const EdgeInsets.all(5.0),
                       child: TextInfo('Table Information', 20,FontStyle.normal,Colors.blue),
                     ),
-                    Expanded(child: BMIResultTable(widget.b.user.weight,widget.b.user.height,widget.b.user.age,widget.b.user.gender)),
+                    Expanded(child: BMIResultTable(widget.b.user.weight,widget.b.user.height,widget.b.user.age,widget.b.user.gender,widget.b.getBMI().floorToDouble())),
                   ],
                 )),
             SizedBox(height: 4,),
             Expanded(flex: 3,
               child: Container(
                 color: Colors.blue ,
-                child: ColumResult(),
+                child: ColumResult(widget.b.user),
               ),
             ),
           ],

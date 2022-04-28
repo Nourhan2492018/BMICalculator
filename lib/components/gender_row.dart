@@ -3,11 +3,14 @@ import 'package:bmi_calculator_app/components/ibm_icon.dart';
 import 'package:bmi_calculator_app/components/text_info.dart';
 import 'package:flutter/material.dart';
 class GenderRow extends StatefulWidget {
+
+   String gender='male';
   @override
   State<GenderRow> createState() => _GenderRowState();
 }
 class _GenderRowState extends State<GenderRow> {
 bool male=true;
+
 BMIIcon iconMale=BMIIcon(Icons.check_circle,Colors.amber,30);
 BMIIcon iconFemale=BMIIcon(Icons.check_circle_outline_sharp,Colors.white,30);
   Color Fcolor=Colors.white,Mcolor=Colors.amber;
@@ -29,7 +32,7 @@ BMIIcon iconFemale=BMIIcon(Icons.check_circle_outline_sharp,Colors.white,30);
                 Expanded(child: GestureDetector(
                   onTap: (){
                     setState(() {
-
+                       widget.gender='male';
                         male=true;
                         Fcolor=Colors.white;
                         Mcolor=Colors.amber;
@@ -47,7 +50,7 @@ BMIIcon iconFemale=BMIIcon(Icons.check_circle_outline_sharp,Colors.white,30);
                 Expanded(child: GestureDetector(
                     onTap: (){
                       setState(() {
-
+                               widget.gender='female';
                                male=false;
                                Fcolor=Colors.amber;
                                Mcolor=Colors.white;

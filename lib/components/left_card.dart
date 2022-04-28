@@ -3,21 +3,13 @@ import 'package:bmi_calculator_app/components/text_info.dart';
 import 'package:flutter/material.dart';
 
 class LeftCard extends StatefulWidget {
-  int counter=16;
+  int counter;
+
+  LeftCard(this.counter);
+
   @override
   State<LeftCard> createState() => _LeftCardState();
-  int getvalue()
-  {
-    print('vookjjj');
-    print (counter);
-    return this.counter;
-  }
-  void setvalue(int counter)
-  {
 
-    this.counter=counter;
-    print (this.counter);
-  }
 }
 
 class _LeftCardState extends State<LeftCard> {
@@ -51,8 +43,10 @@ class _LeftCardState extends State<LeftCard> {
                   heroTag: 'sub',
                   onPressed:(){
                     setState(() {
-                      c--;
-                      widget.setvalue(c);
+                      widget.counter--;
+                      c=widget.counter;
+                       print("rgrdfhbf");
+                       print(widget.counter);
                     });
                   },
                 ),
@@ -66,9 +60,8 @@ class _LeftCardState extends State<LeftCard> {
                   mini: true,
                   onPressed:(){
                     setState(() {
-                      c++;
-                      widget.setvalue(c);
-
+                      widget.counter++;
+                      c=widget.counter;
                     });
                   },),
               ),
